@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl plugin="ghprb@1.35.0">
+  <configVersion>1</configVersion>
+  <whitelistPhrase>.*add\W+to\W+whitelist.*</whitelistPhrase>
+  <okToTestPhrase>.*ok\W+to\W+test.*</okToTestPhrase>
+  <retestPhrase>.*test\W+this\W+please.*</retestPhrase>
+  <skipBuildPhrase>.*\[skip\W+ci\].*</skipBuildPhrase>
+  <cron>H/5 * * * *</cron>
+  <useComments>true</useComments>
+  <useDetailedComments>false</useDetailedComments>
+  <manageWebhooks>false</manageWebhooks>
+  <unstableAs>FAILURE</unstableAs>
+  <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
+  <displayBuildErrorsOnDownstreamBuilds>false</displayBuildErrorsOnDownstreamBuilds>
+  <blackListLabels></blackListLabels>
+  <whiteListLabels></whiteListLabels>
+  <githubAuth>
+    <org.jenkinsci.plugins.ghprb.GhprbGitHubAuth>
+      <serverAPIUrl>https://api.github.com</serverAPIUrl>
+      <credentialsId>3af55bdb-1a3e-4608-9f66-d058ad9b9748</credentialsId>
+      <id>9c800a8f-f563-4266-b302-bb5c1ad2ebbf</id>
+      <description>Anonymous connection</description>
+      <secret>{AQAAABAAAAAQloxF0dIX/E7l1TdIOz1MfnjijkesAJX0QWCxd6gPSyU=}</secret>
+    </org.jenkinsci.plugins.ghprb.GhprbGitHubAuth>
+  </githubAuth>
+  <adminlist></adminlist>
+  <requestForTestingPhrase>Can one of the admins verify this patch?</requestForTestingPhrase>
+  <extensions>
+    <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildStatus>
+      <messages>
+        <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+          <message>Test Passed</message>
+          <result>SUCCESS</result>
+        </org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+        <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+          <message>Test Failed</message>
+          <result>FAILURE</result>
+        </org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+      </messages>
+    </org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildStatus>
+    <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+      <commitStatusContext></commitStatusContext>
+      <showMatrixStatus>false</showMatrixStatus>
+      <addTestResults>false</addTestResults>
+      <completedStatus/>
+    </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+  </extensions>
+</org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl>
